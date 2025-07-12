@@ -22,11 +22,7 @@ Create a platform that allows users to:
 
 ---
 
-## 🖼️ Screenshots *(Place your images in a /screenshots folder)*
-
-| 📍 Home                   | 🔍 Search                   | 👥 Profile List               |
-| ------------------------- | --------------------------- | ----------------------------- |
-| ![](screenshots/home.png) | ![](screenshots/search.png) | ![](screenshots/profiles.png) |
+\| ![](screenshots/home.png) | ![](screenshots/search.png) | ![](screenshots/profiles.png) |
 
 ---
 
