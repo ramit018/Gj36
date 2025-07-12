@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillSwap Platform</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header-animate">
+    <h1 class="logo-animate">SkillSwap</h1>
+    <nav>
+      <a href="#" id="homeLink" class="nav-link">Home</a>
+      <a href="#" id="loginLink" class="nav-link">Login</a>
+      <a href="#" id="profileLink" style="display:none" class="nav-link">My Profile</a>
+      <a href="#" id="searchLink" style="display:none" class="nav-link">Search</a>
+      <a href="#" id="swapRequestsLink" style="display:none" class="nav-link">Swap Requests</a>
+      <a href="#" id="logoutLink" style="display:none" class="nav-link">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Section -->
+    <section id="homeSection" class="section-animate">
+      <h2 class="title-animate">Welcome to SkillSwap</h2>
+      <p class="text-animate">Exchange skills with people in your community!</p>
+      <button id="createProfileBtn" class="btn-pulse">Create New Profile</button>
+      <button id="loginBtn" class="btn-pulse">Login to Existing Profile</button>
+    </section>
+
+    <!-- Login Section -->
+    <section id="loginSection" style="display:none" class="section-animate">
+      <h2 class="title-animate">Login to Your Profile</h2>
+      <form id="loginForm" class="form-animate">
+        <input type="text" id="loginName" placeholder="Your Name" required class="input-animate" />
+        <input type="password" id="loginPassword" placeholder="Your Password" required class="input-animate" />
+        <button type="submit" class="btn-pulse">Login</button>
+      </form>
+      <p id="loginError" style="color:red; display:none" class="error-animate">Incorrect name or password</p>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profileSection" style="display:none" class="section-animate">
+      <h2 class="title-animate">My Profile</h2>
+      <div id="profileView" class="content-animate"></div>
+      <button id="editProfileBtn" class="btn-pulse">Edit Profile</button>
+    </section>
+
+    <!-- Edit Profile Section -->
+    <section id="editProfileSection" style="display:none" class="section-animate">
+      <h2 class="title-animate">Edit Profile</h2>
+      <form id="profileForm" class="form-animate">
+        <input type="text" id="name" placeholder="Name" required class="input-animate" />
+        <input type="text" id="location" placeholder="Location" class="input-animate" />
+        <input type="password" id="password" placeholder="Password (leave blank to keep current)" class="input-animate" />
+        <input type="text" id="skillsOffered" placeholder="Skills Offered (comma-separated)" required class="input-animate" />
+        <input type="text" id="skillsWanted" placeholder="Skills Wanted (comma-separated)" class="input-animate" />
+        <label class="checkbox-animate"><input type="checkbox" id="weekends" /> Available on weekends</label>
+        <label class="checkbox-animate"><input type="checkbox" id="evenings" /> Available in evenings</label>
+        <label class="checkbox-animate"><input type="checkbox" id="isPublic" checked /> Make profile public</label>
+        <button type="submit" class="btn-pulse">Save Profile</button>
+        <button type="button" id="cancelEditBtn" class="btn-pulse">Cancel</button>
+      </form>
+    </section>
+
+    <!-- Search Section -->
+    <section id="searchSection" style="display:none" class="section-animate">
+      <h2 class="title-animate">Search by Skill</h2>
+      <input type="text" id="skillInput" placeholder="e.g., Photoshop" class="input-animate" />
+      <button id="searchBtn" class="btn-pulse">Search</button>
+      <div id="searchResults" class="content-animate"></div>
+    </section>
+
+    <!-- All Profiles Section -->
+    <section id="allProfilesSection" style="display:none" class="section-animate">
+      <h2 class="title-animate">Available Profiles</h2>
+      <div id="profileList" class="content-animate"></div>
+    </section>
+
+    <!-- Swap Requests Section -->
+    <section id="swapRequestsSection" style="display:none" class="section-animate">
+      <h2 class="title-animate">My Swap Requests</h2>
+      <div id="sentRequests" class="content-animate">
+        <h3>Sent Requests</h3>
+        <div id="sentRequestsList"></div>
+      </div>
+      <div id="receivedRequests" class="content-animate">
+        <h3>Received Requests</h3>
+        <div id="receivedRequestsList"></div>
+      </div>
+    </section>
+
+    <!-- Swap Feedback Section -->
+    <section id="swapFeedbackSection" style="display:none" class="section-animate">
+      <h2 class="title-animate">Provide Feedback</h2>
+      <form id="feedbackForm" class="form-animate">
+        <input type="hidden" id="feedbackSwapId" />
+        <div id="feedbackTarget" class="content-animate"></div>
+        <textarea id="feedbackComment" placeholder="Your feedback" class="input-animate"></textarea>
+        <select id="feedbackRating" class="input-animate">
+          <option value="5">5 - Excellent</option>
+          <option value="4">4 - Very Good</option>
+          <option value="3">3 - Good</option>
+          <option value="2">2 - Fair</option>
+          <option value="1">1 - Poor</option>
+        </select>
+        <button type="submit" class="btn-pulse">Submit Feedback</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
